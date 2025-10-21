@@ -4,7 +4,7 @@ import { Sparkles } from "lucide-react";
 
 // Enhanced version: tighter messages, more futuristic AirDarwin glow, and Galapagos NEO green-themed addition.
 
-export default function YorungeMini() {
+export default function Home() {
 return (
 <main className="relative min-h-screen w-full overflow-hidden bg-black text-white selection:bg-white/10 selection:text-white">
 <GradientFog />
