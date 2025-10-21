@@ -224,36 +224,28 @@ z: Math.random(),
 }));
 
 function render(t: number) {
-      // HATAYI DÜZELTEN KONTROL:
+      // HATA DÜZELTMESİ BURADA:
+      // canvas veya ctx'in null (boş) olma ihtimaline karşı kontrol ekliyoruz.
       if (!canvas || !ctx) {
-        return;
+        return; // Eğer boşsa, hiçbir şey çizmeden fonksiyonu bitir.
       }
       // ---
 
       const { width, height } = canvas;
       ctx.clearRect(0, 0, width, height);
       const time = t * 0.00015;
-for (const s of stars) {
-const depth = (s.z + time) % 1.0;
-const sx = (s.x - 0.5) * width * (1 + depth * 0.5) + width / 2;
-const sy = (s.y - 0.5) * height * (1 + depth * 0.5) + height / 2;
-const alpha = 1 - depth;
-ctx.beginPath();
-ctx.arc(sx, sy, 1.2 * DPR, 0, Math.PI * 2);
-ctx.fillStyle = `rgba(255,255,255,${alpha * 0.6})`;
-ctx.fill();
-}
-frame = requestAnimationFrame(render);
-}
-frame = requestAnimationFrame(render);
-window.addEventListener("resize", resize);
-return () => {
-cancelAnimationFrame(frame);
-window.removeEventListener("resize", resize);
-};
-}, []);
-return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 -z-20 h-full w-full" />;
-}
+      for (const s of stars) {
+        const depth = (s.z + time) % 1.0;
+        const sx = (s.x - 0.5) * width * (1 + depth * 0.5) + width / 2;
+        const sy = (s.y - 0.5) * height * (1 + depth * 0.5) + height / 2;
+        const alpha = 1 - depth;
+        ctx.beginPath();
+        ctx.arc(sx, sy, 1.2 * DPR, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${alpha * 0.6})`;
+        ctx.fill();
+      }
+      frame = requestAnimationFrame(render);
+    }
 
 function CursorAura() {
 const mx = useMotionValue(-9999);
