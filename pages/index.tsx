@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
-
+import "../styles/globals.css";
 
 // Enhanced version: tighter messages, more futuristic AirDarwin glow, and Galapagos NEO green-themed addition.
 
