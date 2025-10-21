@@ -49,7 +49,7 @@ function TopBar() {
           animate={{ opacity: 0.7 }}
           transition={{ delay: 0.6, duration: 1.6 }}
         >
-          yörünge mini
+          Yörünge
         </motion.span>
       </motion.div>
     </div>
@@ -129,7 +129,7 @@ function AirDarwinSection() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="ml-auto w-fit max-w-[75%] rounded-2xl bg-green-500/20 px-4 py-1.5 text-left text-sm text-green-300 backdrop-blur-sm shadow-[0_0_20px_rgba(0,255,100,0.15)] border border-green-500/10"
         >
-          Kalkış yap.
+          Yörünge kalkış yap.
         </motion.div>
 
         <motion.div
