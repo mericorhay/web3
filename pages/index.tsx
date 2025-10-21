@@ -224,9 +224,15 @@ z: Math.random(),
 }));
 
 function render(t: number) {
-const { width, height } = canvas;
-ctx.clearRect(0, 0, width, height);
-const time = t * 0.00015;
+      // HATAYI DÜZELTEN KONTROL:
+      if (!canvas || !ctx) {
+        return;
+      }
+      // ---
+
+      const { width, height } = canvas;
+      ctx.clearRect(0, 0, width, height);
+      const time = t * 0.00015;
 for (const s of stars) {
 const depth = (s.z + time) % 1.0;
 const sx = (s.x - 0.5) * width * (1 + depth * 0.5) + width / 2;
